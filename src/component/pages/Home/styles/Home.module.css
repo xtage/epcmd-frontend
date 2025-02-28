@@ -1,0 +1,243 @@
+/* Latest Pulication */
+.mainCard {
+  /* background-color: rgb(208, 232, 250); */
+  min-height: 315px;
+  clip-path: polygon(
+    9.202% 0%,
+    90.798% 0%,
+    90.798% 0%,
+    92.289% 0.11%,
+    93.705% 0.429%,
+    95.025% 0.939%,
+    96.231% 1.622%,
+    97.303% 2.463%,
+    98.223% 3.442%,
+    98.972% 4.543%,
+    99.531% 5.748%,
+    99.879% 7.041%,
+    100% 8.403%,
+    100% 69.468%,
+    100% 69.468%,
+    99.633% 73.178%,
+    98.616% 75.937%,
+    97.076% 77.918%,
+    95.14% 79.293%,
+    92.934% 80.235%,
+    90.585% 80.917%,
+    88.221% 81.511%,
+    85.967% 82.19%,
+    83.95% 83.128%,
+    82.298% 84.496%,
+    82.298% 84.496%,
+    81.047% 86.306%,
+    80.14% 88.282%,
+    79.405% 90.341%,
+    78.671% 92.399%,
+    77.767% 94.371%,
+    76.523% 96.173%,
+    74.767% 97.721%,
+    72.33% 98.931%,
+    69.039% 99.719%,
+    64.724% 100%,
+    9.202% 100%,
+    9.202% 100%,
+    7.711% 99.89%,
+    6.295% 99.571%,
+    4.975% 99.061%,
+    3.769% 98.378%,
+    2.697% 97.538%,
+    1.777% 96.558%,
+    1.028% 95.457%,
+    0.469% 94.252%,
+    0.121% 92.959%,
+    0% 91.597%,
+    0% 8.403%,
+    0% 8.403%,
+    0.121% 7.041%,
+    0.469% 5.748%,
+    1.028% 4.543%,
+    1.777% 3.442%,
+    2.697% 2.463%,
+    3.769% 1.622%,
+    4.975% 0.939%,
+    6.295% 0.429%,
+    7.711% 0.11%,
+    9.202% 0%
+  );
+}
+
+.publicationBtn {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgb(25, 25, 25);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+ 
+/* Award Carousel */
+.card {
+  height: 370px;
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+}
+ 
+/* .mantine-ScrollArea-root	{
+    background-color: red;
+  } */
+.scrollbar {
+  /* &,
+    &:hover {
+      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+    } */
+
+  &[data-orientation="vertical"] .thumb {
+    background-color: #3498db;
+  }
+  &[data-orientation="vertical"] {
+    background-color: white;
+    border-radius: 10px;
+  }
+}
+
+.corner {
+  background-color: light-dark(
+    var(--mantine-color-gray-0),
+    var(--mantine-color-dark-6)
+  );
+  border-radius: 51rem;
+  opacity: 1;
+}
+/* Not working   TODO  chek this out*/
+.iconBox,
+.icon {
+  cursor: pointer;
+  transition: transform 0.8s ease-in-out;
+}
+
+.iconBox:hover .icon {
+  transform: rotateY(360deg);
+}
+
+.pattern {
+  background: url(/src//assets/bg-pattern-I_U8TQ9f.png);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  opacity: 0.1;
+  top: 0;
+  background-size: cover;
+  z-index: 1;
+}
+
+.catalogueBox {
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px 0;
+  min-height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f8fd19;
+  backdrop-filter: blur(5px);
+}
+.catalogueBox a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-weight: 700;
+}
+.catalogueImg {
+  overflow: hidden;
+  filter: invert(1);
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.catalogueImg img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+/* Gallery */
+.firstBox {
+  text-align: center;
+  border-radius: 10px;
+  background: #1082d7;
+  position: relative;
+  padding: 65px 25px;
+  color: #fff;
+}
+
+.firstBox::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #709fc1;
+  top: 0;
+  left: 0;
+  border-radius: 90px 10px;
+}
+.boxWrap {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.galleryImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.boxWrap:hover .galleryImg {
+  transform: scale(1.1);
+}
+
+.boxText {
+  padding: 25px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(0deg, #000000ed, transparent);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+
+/* New  section*/
+.news{
+  position: relative;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--mantine-shadow-md);
+  border-radius: var(--mantine-radius-md) var(--mantine-radius-md) 0 0;
+}
+
+.topColor{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: .5rem;
+  background-color: #f49409;
+  border-radius: var(--mantine-radius-md) var(--mantine-radius-md) 0 0;
+}

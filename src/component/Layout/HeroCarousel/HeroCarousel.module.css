@@ -1,0 +1,36 @@
+.mantine-Carousel-slide	 {
+  transition: transform 0.3s ease-in-out;
+}
+.embla__slide.is-selected
+
+.embla__slide:not(.is-selected) {
+  transform: scale(0.9);
+}
+
+.embla__slide.is-selected {
+  transform: scale(1.1);
+}
+
+.HeroPaper {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.HeroTitle {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  margin-bottom:1rem !important ;
+}
+
+.indicator {
+  width: 12px;
+  height: 4px;
+  transition: width 250ms ease;
+
+  &[data-active] {
+    width: 40px;
+  }
+}

@@ -1,0 +1,75 @@
+.header {
+  height: 12rem;
+  background-color: #05badd;
+  margin-top: 1rem;
+}
+
+.inner {
+  height: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.link {
+  display: block;
+  line-height: 1;
+  padding: 8px 12px;
+  border-radius: var(--mantine-radius-sm);
+  text-decoration: none;
+  /* color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0)); */
+  color: white;
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+  font-family: "Roboto Flex", serif;
+  @mixin hover {
+    /* background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6)); */
+    color: white;
+  }
+}
+
+.subLink{
+  color: black;
+  display: block;
+  line-height: 1;
+  padding: 5px 6px;
+  border-radius: var(--mantine-radius-sm);
+  text-decoration: none;
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 400;
+}
+
+.linkLabel {
+  margin-right: 5px;
+}
+
+.mobileMenu {
+  background-color: #05badd;
+  padding: 10px;
+  border-radius: var(--mantine-radius-sm);
+  margin-top: 10px;
+}
+
+.mobileLink {
+  display: block;
+  padding: 8px 12px;
+  color: white;
+  text-decoration: none;
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.mobileSubMenu {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.mobileSubLink {
+  display: block;
+  padding: 8px 12px;
+  color: white;
+  text-decoration: none;
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+}
