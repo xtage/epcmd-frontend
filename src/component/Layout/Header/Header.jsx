@@ -7,12 +7,13 @@ import {
   Menu,
   Stack,
   Collapse,
+  Divider,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./styles/Header.module.css";
 import { useState } from "react";
 import Logo from "../../../assets/EPCMD LOGO.svg";
-
+ 
 export const links = [
   { link: "/", label: "Home" },
   {
@@ -20,8 +21,8 @@ export const links = [
     label: "About us",
     links: [
       {
-        link: "/about-ecpcmd",
-        label: "About ecpcmd",
+        link: "/about-epcmd",
+        label: "About EPCMD",
       },
       {
         link: "/what-we-do",
@@ -29,19 +30,23 @@ export const links = [
       },
       {
         link: "/mission-vision",
-        label: "Mission & Vision",
+        label: "Mission & vision",
       },
       {
-        link: "/executive-committee",
-        label: "Executive Committee",
+        link: "/committee-of-administration",
+        label: "Committee of administration",
       },
       {
-        link: "/govertance-committees",
-        label: "Govt committees",
+        link: "/product-panel",
+        label: "Product Panel",
       },
       {
-        link: "/executive-committee-election",
-        label: "Executive committee election",
+        link: "/chairmans-message",
+        label: "Chairman's message",
+      },
+      {
+        link: "/officials-of-epcmd",
+        label: "Official's of EPCMD",
       },
     ],
   },
@@ -70,6 +75,11 @@ export const links = [
         label: "Membership Benefits",
       },
       {
+        link: "",   //TODO THIS WILL BE A LINK TO ONLINE RCMC PAGE WHICH HAVE A DOCUMENT TO BE
+        label: "Online RCMC",
+        target: "_blank",
+      },
+      {
         link: "/directory",
         label: "Directory",
       },
@@ -83,9 +93,20 @@ export const links = [
     link: "#3",
     label: "Events",
     links: [
+      // {
+      //   link:'/exhibition',
+      //   label:'Exhibition',
+      //   // links: [
+        
+      //   // ]
+      // },
       {
-        link:'/exhibition',
-        label:'Exhibition'
+        link:'/exhibition-in-india',
+        label:'Exhibition in India'
+      },
+      {
+        link:'/exhibition-in-abroad',
+        label:'Exhibition in Abroad'
       },
       {
         link:'/webinar',
@@ -111,33 +132,99 @@ export const links = [
   },
   {
     link: "#4",
-    label: "Statistics/Reports",
+    label: "Knowledge Documents",
     links: [
       {
-        link:'/export-statistics',
-        label:'Export a glance'
+        link:'/medical-device-policy',
+        label:'Medical Device Policy'
       },
       {
-        link:'/stats-and-trade-research',
-        label:'Stats and trade research'
+        link:'/mai-assistance',
+        label:'MAI Assistance'
       },
       {
-        link:'/trade-data-bank',
-        label:'Trade data bank'
+        link:'/indian-mission-abroad',
+        label:'Indian mission abroad'
       },
       {
-        link:'/market-reports',
-        label:'Market reports'
+        link:'/overseas-missions-in-india',
+        label:'Overseas missions in India'
       },
       {
-        link:'/trade-information',
-        label:'Trade information'
+        link:'/medical-device-trade-associations',
+        label:'Medical device trade associations'
       },
       {
-        link:'/sez',
-        label:'SEZ'
+        link:'/visa',
+        label:'Visa'
+      },
+      {
+        link:'/strategy-paper',
+        label:'Strategy Paper'
+      },
+      {
+        link:'/annual-reports',
+        label:'Annual Reports'
+      },
+      {
+        link:'/publications',
+        label:'Publications'
       },
     ],
+  },
+  {
+    link:'#',
+    label:'Policy Info',
+    links: [
+      {
+        link:'/rodttep',
+        label:'RODTEP'
+      },
+      {
+        link:'/foreign-trade-policy',
+        label:'Foreign Trade policy'
+      },
+      {
+        link:'/circular-om-from-doc',
+        label:'Circular/OM from DOC'
+      },
+      {
+        link:'/circular-om-from-dop',
+        label:'Circular/OM from DOP'
+      },
+      {
+        link:'/circular-om-from-other-ministries',
+        label:'Circular/OM from Other ministries'
+      },
+      {
+        link:'/hs-codes',
+        label:'HS Codes'
+      },
+      {
+        link:'/msme-scheme',
+        label:'MSME Scheme'
+      },
+      {
+        link:'/mai-scheme',
+        label:'MAI Scheme'
+      },
+      {
+        link:'/medical-device-scheme',
+        label:'Medical Device Scheme'
+      },
+      {
+        link:'/certificate-of-origin',
+        label:'Certificate of Origin'
+      },
+      {
+        link:'/guidelines-of-reimbursement-of-airfare',
+        label:'Guidelines of Reimbursement of Airfare'
+      },
+      {
+        link:'/customs-exchange-rate',
+        label:'Customs Exchange Rate'
+      },
+    ]
   },
   {
     link:'/gallery',
@@ -176,6 +263,7 @@ const Header = () => {
         <a href={item.link} className={classes.subLink}>
           {item.label}
         </a>
+        <Divider size={'xs'} />
       </Menu.Item>
     ));
 

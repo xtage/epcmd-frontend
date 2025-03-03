@@ -9,28 +9,81 @@ const data = [
   {
     title: "About",
     links: [
-      { label: "Features", link: "#" },
-      { label: "Pricing", link: "#" },
-      { label: "Support", link: "#" },
-      { label: "Forums", link: "#" },
+      {
+        link: "/about-epcmd",
+        label: "About epcmd",
+      },
+      {
+        link: "/what-we-do",
+        label: "What we do",
+      },
+      {
+        link: "/mission-vision",
+        label: "Mission & Vision",
+      },
+      {
+        link: "/executive-committee",
+        label: "Executive Committee",
+      },
+      {
+        link: "/govertance-committees",
+        label: "Govt committees",
+      },
+      
     ],
   },
   {
-    title: "Project",
+    title: "Events",
     links: [
-      { label: "Contribute", link: "#" },
-      { label: "Media assets", link: "#" },
-      { label: "Changelog", link: "#" },
-      { label: "Releases", link: "#" },
+      {
+        link:'/exhibition',
+        label:'Exhibition'
+      },
+      {
+        link:'/webinar',
+        label:'Webinar'
+      },
+      {
+        link:'/technical-conference',
+        label:'Technical conference'
+      },
+      {
+        link:'/trade-show',
+        label:'Trade show'
+      },
+      {
+        link:'/event-calender',
+        label:'Event calender'
+      },
     ],
   },
   {
-    title: "Community",
+    title: "Members",
     links: [
-      { label: "Join Discord", link: "#" },
-      { label: "Follow on Twitter", link: "#" },
-      { label: "Email newsletter", link: "#" },
-      { label: "GitHub discussions", link: "#" },
+      { 
+        link: "/how-to-apply",
+         label: "How to apply" 
+        },
+      {
+        link: "/become-a-member",
+        label: "Become a member",
+      },
+      {
+         link: "/document-need ",
+          label: "Document Need" 
+        },
+      {
+         link: "/fee-structure", 
+         label: "Fee structure"
+         },
+      {
+        link: "/membership-benefits",
+        label: "Membership Benefits",
+      },
+      {
+        link: "/directory",
+        label: "Directory",
+      },
     ],
   },
 ];

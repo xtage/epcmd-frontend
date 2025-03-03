@@ -11,24 +11,24 @@ const Service = () => {
         <Title order={4} ta={"center"} fw={500} fz={42}>
           Our Services
         </Title>
-        <Tabs variant="unstyled" defaultValue="member"  classNames={classes} radius={"xl"} >
+        {/* <Tabs variant="unstyled" defaultValue="member"  classNames={classes} radius={"xl"} >
           <Tabs.List  justify="center"  
            >
             <Tabs.Tab w={200} style={{
             boxShadow:'var(--mantine-shadow-xl)',
             borderRadius:'var(--mantine-radius-md)',
           }} bd={"sm"} c={'black'} value="member" leftSection={<User size={16} />}>
-              For Member
-            </Tabs.Tab>
-            <Tabs.Tab w={200} style={{
+              Member
+            </Tabs.Tab> */}
+            {/* <Tabs.Tab w={200} style={{
             boxShadow:'var(--mantine-shadow-xl)',
             borderRadius:'var(--mantine-radius-md)',
 
           }} value="buyer" leftSection={<UserCheck size={16} />}>
               For Buyer
-            </Tabs.Tab>
-          </Tabs.List>
-          <Tabs.Panel value="member">
+            </Tabs.Tab> */}
+          {/* </Tabs.List> */}
+          {/* <Tabs.Panel value="member"> */}
             <Grid mt={"xl"} h={"100%"}>
               {MemberCardData.map((card, index) => (
                 <Grid.Col
@@ -44,8 +44,8 @@ const Service = () => {
                 </Grid.Col>
               ))}
             </Grid>
-          </Tabs.Panel>
-          <Tabs.Panel value="buyer">
+          {/* </Tabs.Panel> */}
+         {/* / <Tabs.Panel value="buyer">
             <Grid mt={"xl"}>
               <Grid.Col span={4}>
                 <FlipCard
@@ -55,9 +55,9 @@ const Service = () => {
                   color={MemberCardData[0].color}
                 />
               </Grid.Col>
-            </Grid>
-          </Tabs.Panel>
-        </Tabs>
+            // </Grid> */}
+          {/* </Tabs.Panel> */}
+        {/* </Tabs> */}
       {/* </Container> */}
     </Box>
   );
