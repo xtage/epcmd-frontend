@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown  ,ChevronRight} from "lucide-react";
 import {
   Burger,
   Center,
@@ -13,7 +13,7 @@ import { useDisclosure } from "@mantine/hooks";
 import classes from "./styles/Header.module.css";
 import { useState } from "react";
 import Logo from "../../../assets/EPCMD LOGO.svg";
- 
+
 export const links = [
   { link: "/", label: "Home" },
   {
@@ -54,20 +54,20 @@ export const links = [
     link: "#2",
     label: "Member",
     links: [
-      { 
+      {
         link: "/how-to-apply",
-         label: "How to apply" 
+         label: "How to apply"
         },
       {
         link: "/become-a-member",
         label: "Become a member",
       },
       {
-         link: "/document-need ",
-          label: "Document Need" 
+         link: "/documents-need ",
+          label: "Documents Need"
         },
       {
-         link: "/fee-structure", 
+         link: "/fee-structure",
          label: "Fee structure"
          },
       {
@@ -93,21 +93,21 @@ export const links = [
     link: "#3",
     label: "Events",
     links: [
-      // {
-      //   link:'/exhibition',
-      //   label:'Exhibition',
-      //   // links: [
-        
-      //   // ]
-      // },
       {
-        link:'/exhibition-in-india',
-        label:'Exhibition in India'
+        link:'/exhibitions',
+        label:'Exhibitions',
+        links: [
+          {
+            link:'/exhibition-in-india',
+            label:'Exhibition in India'
+          },
+          {
+            link:'/exhibition-in-abroad',
+            label:'Exhibition in Abroad'
+          },
+        ]
       },
-      {
-        link:'/exhibition-in-abroad',
-        label:'Exhibition in Abroad'
-      },
+     
       {
         link:'/webinar',
         label:'Webinar'
@@ -231,21 +231,11 @@ export const links = [
     label:'Gallery',
   },
   {
-    link: "#5",
+    link: "/contact-us",
     label:'Contact us',
-    // links: [
-    //   {
-    //     link:'/contact',
-    //     label:'Contact'
-    //   },
-    //   {
-    //     link:'/external-links',
-    //     label:'External Links'
-    //   },
-    // ],
   }
 ];
-
+ 
 const Header = () => {
   const [opened, { toggle }] = useDisclosure(false);
   const [openMenus, setOpenMenus] = useState({});
@@ -257,111 +247,58 @@ const Header = () => {
     }));
   };
 
-  const items = links.map((link) => {
-    const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>
-        <a href={item.link} className={classes.subLink}>
-          {item.label}
-        </a>
-        <Divider size={'xs'} />
-      </Menu.Item>
-    ));
-
-    if (menuItems) {
-      return (
-        <Menu
-          key={link.label}
-          trigger="hover"
-          transitionProps={{ exitDuration: 0 }}
-          withinPortal
-        >
-          <Menu.Target>
-            <a
-              href={link.link}
-              className={classes.link}
-              onClick={(event) => {
-                // Prevent navigation for parent links with submenus
-                event.preventDefault();
-              }}
-            >
-              <Center>
-                <span className={classes.linkLabel}>{link.label}</span>
-                <ChevronDown size={14} strokeWidth={3} />
-              </Center>
-            </a>
-          </Menu.Target>
-          <Menu.Dropdown>{menuItems}</Menu.Dropdown>
-        </Menu>
-      );
-    }
-
-    return (
-      <a key={link.label} href={link.link} className={classes.link}>
-        {link.label}
-      </a>
-    );
-  });
-
   return (
     <header className={classes.header}>
       <Container size="lg">
         <div className={classes.inner}>
-          {/* <Image src={Logo} w={70} h={70} p={"xs"} fit="contain" /> */}
           <Group gap={5} visibleFrom="sm">
-            {items}
-          </Group>
-          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-        </div>
-        {opened && (
-          <Stack hiddenFrom="sm" className={classes.mobileMenu}>
             {links.map((link) => (
               <div key={link.label}>
-                <div
-                  className={classes.mobileLink}
-                  onClick={() => {
-                    if (link.links) {
-                      toggleMenu(link.label);
-                    } else {
-                      // Navigate to the link if no submenu exists
-                      window.location.href = link.link;
-                    }
-                  }}
-                >
-                  <Group justify="" align="center">
-                    <span>{link.label}</span>
-                    {link.links && (
-                      <ChevronDown
-                        size={14}
-                        strokeWidth={1.5}
-                        style={{
-                          transform: openMenus[link.label]
-                            ? "rotate(180deg)"
-                            : "none",
-                          transition: "transform 0.2s",
-                        }}
-                      />
-                    )}
-                  </Group>
-                </div>
-                {link.links && (
-                  <Collapse in={openMenus[link.label]}>
-                    <Stack className={classes.mobileSubMenu}>
+                {link.links ? (
+                  <Menu width={200} shadow="md" position="bottom-start"  trigger={'hover'} closeOnItemClick={false}>
+                    <Menu.Target>
+                      <a href={link.link} className={classes.normalLink}>
+                        <Center>
+                          <span>{link.label}</span>
+                          <ChevronDown size={14} strokeWidth={3} />
+                        </Center>
+                      </a>
+                    </Menu.Target>
+                    <Menu.Dropdown className={classes.submenuDropdown}>
                       {link.links.map((subLink) => (
-                        <a
-                          key={subLink.label}
-                          href={subLink.link}
-                          className={classes.mobileSubLink}
-                        >
-                          {subLink.label}
-                        </a>
+                        <div key={subLink.label}>
+                          {subLink.links ? (
+                            <Menu width={200} shadow="md" position="right-start" trigger="hover" closeOnItemClick={false}>
+                              <Menu.Target>
+                                <Menu.Item  rightSection={<ChevronRight size={14} />}> 
+                                  {subLink.label}
+                                </Menu.Item>
+                              </Menu.Target>
+                              <Menu.Dropdown className={classes.nestedSubmenuDropdown}>
+                                {subLink.links.map((nestedLink) => (
+                                  <Menu.Item key={nestedLink.label} component="a" href={'/'} className={classes.nestedSubmenuLink}>
+                                    {nestedLink.label}
+                                  </Menu.Item>
+                                ))}
+                              </Menu.Dropdown>
+                            </Menu>
+                          ) : (
+                            <Menu.Item key={subLink.label} component="a" href={subLink.link} className={classes.submenuLink}> 
+                              {subLink.label}
+                            </Menu.Item>
+                          )}
+                        </div>
                       ))}
-                    </Stack>
-                  </Collapse>
+                    </Menu.Dropdown>
+                  </Menu>
+                ) : (
+                  <a href={link.link} className={classes.normalLink}>{link.label}</a>
                 )}
               </div>
             ))}
-          </Stack>
-        )}
+          </Group>
+          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
+        </div>
       </Container>
     </header>
   );

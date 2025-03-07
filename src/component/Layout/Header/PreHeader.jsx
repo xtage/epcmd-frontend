@@ -14,8 +14,8 @@ function PreHeader() {
   return (
     <Flex justify={"space-between"} className={classes.main} p={'sm'}>
       <Flex gap={"md"}>
-        <Text fz={'sm'} c={"#05BADD"}>
-        Department of commerce | Dept of pharma | Yeida
+        <Text fz={'sm'} c={"#344CB7"}>
+        Department of Commerce | Dept of Pharma | YEIDA
         </Text>
         {/* <Flex gap={"0.3rem"} align={"center"} justify={"center"}>
           <Phone color="#05BADD" size={16} />
@@ -27,15 +27,15 @@ function PreHeader() {
         </Flex> */}
       </Flex>
       <Flex gap={"sm"} align={"center"}>
-        <UnstyledButton c={"orange"}>
+        <UnstyledButton c={"#577BC1"}>
           <b> Member Login </b>
         </UnstyledButton>
         <Text c={"#05BADD"}>|</Text>
-        <Text c={"#05BADD"}>Follow us</Text>
+        <Text c={"#577BC1"}>Follow us</Text>
 
-        <Facebook color="#05BADD" size={16} />
-        <IconBrandX color="#05BADD" size={16} />
-        <Instagram color="#05BADD" size={16} />
+        <Facebook color="#577BC1" size={16} />
+        <IconBrandX color="#577BC1" size={16} />
+        <Instagram color="#577BC1" size={16} />
       </Flex>
     </Flex>
   );

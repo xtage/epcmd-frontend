@@ -7,7 +7,6 @@ import Icon4 from "../../../assets/Icon4.png";
 import Icon5 from "../../../assets/Icon5.png";
 import Icon6 from "../../../assets/Icon6.png";
 import Icon7 from "../../../assets/Icon7.png";
-import Icon8 from "../../../assets/Icon8.png";
 export const SimpleCardData = [
   {
     imageUrl: "https://www.eepcindia.org/backend/uploads/1737186342.PNG",
@@ -159,41 +158,34 @@ export const MemberCardData = [
   },
   {
     image: Icon3,
-    frontText: "Export Strategy Development",
-    backText:
-      "Get expert guidance on developing effective export strategies tailored to your business goals and target markets.",
-    color: "#E7B133",
-  },
-  {
-    image: Icon4,
     frontText: "Policy Advocacy",
     backText:
       "Benefit from our advocacy efforts to influence policies that support and promote the growth of your export business.",
     color: "#FF725E",
   },
   {
-    image: Icon5,
+    image: Icon4,
     frontText: "Capacity Building",
     backText:
       "Enhance your skills and knowledge through workshops, training programs, and resources designed to improve your export capabilities.",
     color: "#82F409",
   },
   {
-    image: Icon6,
+    image: Icon5,
     frontText: "Export Promotion Incentive Under MAI",
     backText:
       "Avail financial assistance and incentives under the Market Access Initiative (MAI) to reduce the cost of export promotion activities.",
     color: "#E009F4",
   },
   {
-    image: Icon7,
+    image: Icon6,
     frontText: "Export Data and Information",
     backText:
       "Access comprehensive export data, market insights, and trade information to make informed business decisions.",
     color: "#6B09F4",
   },
   {
-    image: Icon8,
+    image: Icon7,
     frontText: "Organizer Reverse Buyer Seller Meet",
     backText:
       "Participate in reverse buyer-seller meets where international buyers are invited to explore your products and services.",

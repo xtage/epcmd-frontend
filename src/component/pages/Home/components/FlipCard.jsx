@@ -17,7 +17,7 @@ const FlipCard = ({image, frontText, backText , color}) => {
         cursor: "pointer",
       }}
     >
-      <Flip h={260} w={'100%'} flipped={flipped}>
+      <Flip h={200} w={'100%'} flipped={flipped}>
         <FrontSide image={image} frontText={frontText} color={color} />
         <BackSide backText={backText} />
       </Flip>
@@ -32,7 +32,7 @@ const FrontSide = ({image ,frontText ,color}) => {
       radius="md"
       withBorder
       pos={"relative"}
-      h={250}
+      h={200}
 
       className={classes.side}
     >
@@ -53,7 +53,7 @@ const BackSide = ({backText}) => {
       shadow="sm"
       radius="md"
       withBorder
-      h={256}
+      h={206}
       pos={"relative"}
       bg={"#262A78"}
       className={classes.side}

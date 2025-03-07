@@ -14,6 +14,7 @@ import {
   Image,
   Anchor,
   Paper,
+  BackgroundImage,
 } from "@mantine/core";
 import { useState } from "react";
 
@@ -34,27 +35,12 @@ import AwardCarousel from "./components/AwardCarousel";
 import classes from "./styles/Home.module.css";
 import Gallery from "./components/Gallery";
 import Service from "./components/Service";
-import Web from "../../../assets/Web.png";
+import EventImage from "../../../assets/bro.png";
 import Icon from "../../../assets/Icon.png";
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 
 const Home = () => {
   const [value, setValue] = useState(new Date());
-  // const handleNextMonth = () => {
-  //   if (value) {
-  //     const newDate = new Date(value);
-  //     newDate.setMonth(newDate.getMonth() + 1);
-  //     setValue(newDate);
-  //   }
-  // };
-
-  // const handlePreviousMonth = () => {
-  //   if (value) {
-  //     const newDate = new Date(value);
-  //     newDate.setMonth(newDate.getMonth() - 1);
-  //     setValue(newDate);
-  //   }
-  // };
-
   const handleNextMonth = () => {
     const newDate = new Date(value); // Create a copy of the current date
     newDate.setMonth(newDate.getMonth() + 1); // Increment the month by 1
@@ -77,7 +63,7 @@ const Home = () => {
         <HeroCarousel />
       </Box>
       <Service />
-      <Box bg={"#D2F4FF"} p={"3rem"}>
+      <Box>
         <Box mb={"lg"}>
           <Title order={2} ta={"center"} fw={600} fz={36}>
             Photo Gallery
@@ -92,7 +78,7 @@ const Home = () => {
           </Title>
         </Box>
         <Flex gap={"xl"} mt={"lg"}>
-          <Box w={"50%"}>
+          <Paper shadow="md" w={"50%"} radius={"md"}>
             <Flex
               justify={"center"}
               gap={"xs"}
@@ -159,9 +145,29 @@ const Home = () => {
                 ))}
               </Stack>
             </ScrollArea>
-          </Box>
+            <Flex justify={"space-between"} m={"sm"}>
+              <Button
+                variant="outline"
+                leftSection={<IconChevronLeft />}
+                size="sm"
+                c={"#223E7E"}
+                radius={"md"}
+              >
+                Previous
+              </Button>
+              <Button
+                variant="outline"
+                rightSection={<IconChevronRight />}
+                size="sm"
+                c={"#223E7E"}
+                radius={"md"}
+              >
+                Next
+              </Button>
+            </Flex>
+          </Paper>
           <Flex justify={"center"} align={"center"} w={"50%"}>
-            <Image src={Web} w={300} h={300}></Image>
+            <Image src={EventImage} h={300}></Image>
           </Flex>
         </Flex>
       </Box>
@@ -170,12 +176,13 @@ const Home = () => {
         <Grid>
           <Grid.Col span={4}>
             <Paper radius="md" withBorder mih={300}>
-              <Box className={classes.news} p={"1.5rem"}>
-                <Box className={classes.topColor} />
+            <Flex align={'center'} justify={'center'} gap={'sm'} className={classes.news} p={"1.5rem"}>
+            <Box className={classes.topColor} bg={'#FFEB00'}/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48"><path fill="#ff5722" d="M32 15v28H10c-2.2 0-4-1.8-4-4V15z"/><path fill="#ffccbc" d="M14 5v34c0 2.2-1.8 4-4 4h29c2.2 0 4-1.8 4-4V5z"/><path fill="#ff5722" d="M20 10h18v4H20zm0 7h8v2h-8zm10 0h8v2h-8zm-10 4h8v2h-8zm10 0h8v2h-8zm-10 4h8v2h-8zm10 0h8v2h-8zm-10 4h8v2h-8zm10 0h8v2h-8zm-10 4h8v2h-8zm10 0h8v2h-8zm-10 4h8v2h-8zm10 0h8v2h-8z"/></svg>
                 <Text ta={"center"} mt={"xs"}>
                   News/ Press release/ Circulars
                 </Text>
-              </Box>
+              </Flex>
               <Flex
                 gap={"sm"}
                 align="center"
@@ -183,10 +190,10 @@ const Home = () => {
                 p={"md"}
               >
                 <Divider orientation="vertical" size={"md"} color="#00BCF6" />
-                <Text>
+                <Anchor>
                   Government announces new healthcare reforms to improve rural
                   medical services.
-                </Text>
+                </Anchor>
               </Flex>
               <Flex
                 gap={"sm"}
@@ -195,10 +202,10 @@ const Home = () => {
                 p={"md"}
               >
                 <Divider orientation="vertical" size={"md"} color="#00BCF6" />
-                <Text>
+                <Anchor>
                   New guidelines released for medical waste management in
                   hospitals.
-                </Text>
+                </Anchor>
               </Flex>
               <Flex
                 gap={"sm"}
@@ -207,21 +214,22 @@ const Home = () => {
                 p={"md"}
               >
                 <Divider orientation="vertical" size={"md"} color="#00BCF6" />
-                <Text>
+                <Anchor>
                   Annual health report shows significant improvement in life
                   expectancy.
-                </Text>
+                </Anchor>
               </Flex>
             </Paper>
           </Grid.Col>
           <Grid.Col span={4}>
             <Paper radius="md" withBorder mih={300}>
-              <Box className={classes.news} p={"1.5rem"}>
-                <Box className={classes.topColor} bg={"#209116"} />
+            <Flex align={'center'} justify={'center'} gap={'sm'} className={classes.news} p={"1.5rem"}>
+            <Box className={classes.topColor} bg={"#FFEB00"} />
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 36 36"><path fill="#b3d9e6" d="M30 4H6a2 2 0 0 0-2 2v24a2 2 0 0 0 2 2h1.88v1.57a1 1 0 0 0 2 0V32h16v1.57a1 1 0 0 0 2 0V32H30a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M6 30V6h24v24Z"/><path fill="#b3d9e6" d="M20 18h2v2h-2zm4 0h2v2h-2zm-4 4h2v2h-2zm4 0h2v2h-2zm3.22-12H20v4a.8.8 0 1 0 1.59 0v-2.4h5.63a.8.8 0 1 0 0-1.6M8.81 10h8.14v2H8.81zm0 4h8.14v2H8.81zm0 4h8.14v2H8.81zm0 4h8.14v2H8.81zm0 4h8.14v2H8.81z"/></svg>
                 <Text ta={"center"} mt={"xs"}>
                   Social
                 </Text>
-              </Box>
+              </Flex>
               <Flex
                 gap={"sm"}
                 align="center"
@@ -229,10 +237,10 @@ const Home = () => {
                 p={"md"}
               >
                 <Divider orientation="vertical" size={"md"} color="#00BCF6" />
-                <Text>
+                <Anchor>
                   Community health workers celebrated for their efforts during
                   the pandemic.
-                </Text>
+                </Anchor>
               </Flex>
               <Flex
                 gap={"sm"}
@@ -241,10 +249,10 @@ const Home = () => {
                 p={"md"}
               >
                 <Divider orientation="vertical" size={"md"} color="#00BCF6" />
-                <Text>
+                <Anchor>
                   Local NGO organizes free health camp for underprivileged
                   communities.
-                </Text>
+                </Anchor>
               </Flex>
               <Flex
                 gap={"sm"}
@@ -253,21 +261,22 @@ const Home = () => {
                 p={"md"}
               >
                 <Divider orientation="vertical" size={"md"} color="#00BCF6" />
-                <Text>
+                <Anchor>
                   Social media campaign raises awareness about mental health
                   issues.
-                </Text>
+                </Anchor>
               </Flex>
             </Paper>
           </Grid.Col>
           <Grid.Col span={4}>
             <Paper radius="md" withBorder mih={300}>
-              <Box className={classes.news} p={"1.5rem"}>
-                <Box className={classes.topColor} bg={"#ff725e"} />
+              <Flex align={'center'} justify={'center'} gap={'sm'} className={classes.news} p={"1.5rem"}>
+                <Box className={classes.topColor} bg={"#FFEB00"} />
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#00bcd4" d="m13.844 7.536l-1.288-1.072A2 2 0 0 0 11.276 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H15.124a2 2 0 0 1-1.28-.464"/><path fill="#b2ebf2" d="M22 18h6v2h-6zm0 4h6v2h-6z"/><path fill="#b2ebf2" d="M10 15v12a1 1 0 0 0 1 1h20a1 1 0 0 0 1-1V15a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1m20 11H20V16h10Z"/></svg>
                 <Text ta={"center"} mt={"xs"}>
                   Blogs
                 </Text>
-              </Box>
+              </Flex>
               <Flex
                 gap={"sm"}
                 align="center"
@@ -275,9 +284,9 @@ const Home = () => {
                 p={"md"}
               >
                 <Divider orientation="vertical" size={"md"} color="#00BCF6" />
-                <Text>
+                <Anchor>
                   Top 5 innovations in healthcare technology to watch in 2025.
-                </Text>
+                </Anchor>
               </Flex>
               <Flex
                 gap={"sm"}
@@ -286,9 +295,9 @@ const Home = () => {
                 p={"md"}
               >
                 <Divider orientation="vertical" size={"md"} color="#00BCF6" />
-                <Text>
+                <Anchor>
                   How telemedicine is transforming rural healthcare access.
-                </Text>
+                </Anchor>
               </Flex>
               <Flex
                 gap={"sm"}
@@ -297,54 +306,62 @@ const Home = () => {
                 p={"md"}
               >
                 <Divider orientation="vertical" size={"md"} color="#00BCF6" />
-                <Text>
+                <Anchor>
                   The role of AI in predicting and preventing disease outbreaks.
-                </Text>
+                </Anchor>
               </Flex>
             </Paper>
           </Grid.Col>
         </Grid>
       </Box>
-
-      <Box bg={"#D2F4FF"} p={"3rem"}>
-        <Container>
-          <Box mb={"lg"}>
-            <Title order={2} ta={"center"} fw={600} fz={36}>
-              EPCMD at a glance
-            </Title>
-          </Box>
-          <Grid>
-            {Glance.map((item, index) => (
-              <Grid.Col span={6}>
-                <Paper
-                  shadow="sm"
-                  radius="md"
-                  withBorder
-                  h={200}
-                  pos={"relative"}
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Box bg={"red"} />
-                  <Stack gap={"xs"} justify={"center"} align={"center"}>
-                    <item.icon size={50} />
-                    <Stack gap={0} mt={'lg'}> 
-                      <Text fw={400} fz={20} ta={"center"}>
-                        {item.title}
-                      </Text>
-                      <Text fw={600} fz={25} ta={"center"}>
-                        {item.count}
-                      </Text>
+      {/* EPCMD at a glance */}
+      <Box w={'100%'} >
+          <BackgroundImage
+              src="https://s3-alpha-sig.figma.com/img/0ef1/9b06/0d265a7532cd5854a3907dafd3d7057c?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Yx6dSWpBlArgMUR5OcRcAt9j8-knBaj8Slj-n-sppVqSGMCYIfiOxMqBQMSa8QK6ASUIJVZ4LxGezCJj2Z1l60-oBIETcOyYef~3vk48S-AyE2foCcrEl81wE1PgmbdHVFl4-t32h84IBJDZ5qCKVxEiE~vDq~4-IvFYd4aaUSwOLwyQsEldHrbPop03tU22Yj1FVwGS~ozX-ciT6PLypVKCn2qBWY3CBp~7fwAw8Cp29hwxitzjE1n5UHIutn5dS1pU8mjTLqGFlxEfnVgLhn46Vf7uR22kMsXubnwyCx5IHkxHH-LnVzIhUPpsO-Z9GAXAfrcuNBpZbppiCvRD7g__"     
+              style={{
+                backgroundColor:'rgba(255, 255, 255, 0.6)',
+                backgroundBlendMode: 'lighten',
+              }}
+          >
+            <Box mb={"lg"} p={'xl'}>
+              <Title order={2} c={'#223E7E'} ta={"center"} fw={600} fz={36}>
+                EPCMD at a glance
+              </Title>
+            </Box>
+            <Box c={'white'} style={{
+              overflow:'hidden',
+            }}>
+            <Grid>
+              {Glance.map((item, index) => (
+                <Grid.Col span={3}>
+                  <Paper
+                    bg={'transparent'}
+                    h={200}
+                    c={'black'}
+                    pos={"relative"}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Stack gap={"xs"} justify={"center"} align={"center"}>
+                      <item.icon size={53} />
+                      <Stack gap={0} mt={"lg"}>
+                        <Text fw={400} fz={16} ta={"center"}>
+                          {item.title}
+                        </Text>
+                        <Text fw={600} fz={22} ta={"center"}>
+                          {item.count}
+                        </Text>
+                      </Stack>
                     </Stack>
-                  </Stack>
-                </Paper>
-              </Grid.Col>
-            ))}
-          </Grid>
-        </Container>
+                  </Paper>
+                </Grid.Col>
+              ))}
+            </Grid>
+            </Box>
+          </BackgroundImage>
       </Box>
     </Box>
   );

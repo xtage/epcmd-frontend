@@ -8,7 +8,7 @@ const Service = () => {
   return (
     <Box px={"5rem"} mb={'xl'}>
       {/* <Container> */}
-        <Title order={4} ta={"center"} fw={500} fz={42}>
+        <Title order={4} c={'#223E7E'} ta={"center"} fw={500} fz={42}>
           Our Services
         </Title>
         {/* <Tabs variant="unstyled" defaultValue="member"  classNames={classes} radius={"xl"} >
@@ -33,8 +33,8 @@ const Service = () => {
               {MemberCardData.map((card, index) => (
                 <Grid.Col
                   key={index}
-                  span={index >= MemberCardData.length - 2 ? 6 : 4}
-                >
+                  span={index < 2 || index >= MemberCardData.length - 2 ? 6 : 4}
+                  >
                   <FlipCard
                     image={card.image}
                     frontText={card.frontText}

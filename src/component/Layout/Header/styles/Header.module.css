@@ -1,42 +1,44 @@
 .header {
   height: 12rem;
-  background-color: #05badd;
+  background-color: #344CB7;
   margin-top: 1rem;
 }
 
 .inner {
+  width: 100%;
   height: 2.5rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.link {
+.normalLink {
   display: block;
   line-height: 1;
   padding: 6px 10px;
   border-radius: var(--mantine-radius-sm);
   text-decoration: none;
-  /* color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0)); */
   color: white;
   font-size: var(--mantine-font-size-sm);
   font-weight: 500;
   font-family: "Roboto Flex", serif;
   @mixin hover {
-    /* background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6)); */
     color: white;
   }
 }
 
-.subLink{
-  color: black;
+.subLink {
+  /* color: black;  */
   display: block;
   line-height: 1;
-  padding: 5px 6px;
+  padding: 8px 12px; 
   border-radius: var(--mantine-radius-sm);
   text-decoration: none;
   font-size: var(--mantine-font-size-sm);
   font-weight: 400;
+  @mixin hover {
+    background-color: rgba(0, 0, 0, 0.05); 
+  }
 }
 
 .linkLabel {

@@ -14,6 +14,7 @@ import { links } from "./component/Layout/Header/Header";
 import classes from "./component/pages/About/styles/About.module.css";
 import { getPageTitle } from "./lib/method/getPageTitle";
 import { Events } from "./component/pages/Events/EventsRoutes";
+import NameHeader from "./component/Layout/Header/NameHeader";
 
 const App = () => {
   const location = useLocation();
@@ -40,6 +41,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <Flex direction={"column"} h={"100vh"}>
         <PreHeader />
+        <NameHeader/>
         <ImageHeader />
         <Header />
         {location.pathname != "/" && (
