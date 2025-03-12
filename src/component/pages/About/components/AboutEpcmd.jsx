@@ -1,21 +1,19 @@
 import { Box, Flex, Paper, Skeleton, Text, Title } from "@mantine/core";
 
-const ChairmanPen = () => {
+import { useAboutPage } from "../../../../lib/queries/About/useBriefProfile";
+const AboutEpcmd = () => {
+  const { data, isLoading } = useAboutPage();
   const PRIMARY_COL_HEIGHT = "400px";
-  // const { data, isLoading } = useAboutPage();
   return (
     <Paper className="relativePositioning" p={"lg"}>
-      <Flex w={"100%"} gap={"md"}>
-        <Box w={"50%"}>
-          <Skeleton
-            w={"100%"}
-            height={PRIMARY_COL_HEIGHT}
-            radius="md"
-            animate={false}
-          />
+      <Flex w={'100%'} gap={'md'}>
+        <Box w={'50%'}>
+          <Skeleton w={'100%'} height={PRIMARY_COL_HEIGHT} radius="md" animate={false} />
         </Box>
-        <Box w={"50%"}>
-          <Title order={3}>CHAIRMAN’S PEN</Title>
+        <Box w={'50%'}>
+          <Title order={3}>
+          WHAT IS EPCMD?
+          </Title>
           <Text>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
             incidunt natus harum ab modi ut, consequatur nam dolorum magnam
@@ -47,4 +45,4 @@ const ChairmanPen = () => {
   );
 };
 
-export default ChairmanPen;
+export default AboutEpcmd;

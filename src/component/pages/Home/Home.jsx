@@ -19,10 +19,6 @@ import {
 import { useState } from "react";
 
 import {
-  CalendarDays,
-  FileChartColumn,
-  IdCard,
-  FileText,
   ArrowLeft,
   ArrowRight,
 } from "lucide-react";

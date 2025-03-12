@@ -94,8 +94,8 @@ export const links = [
     label: "Events",
     links: [
       {
-        link:'/exhibitions',
         label:'Exhibitions',
+        link:'##',
         links: [
           {
             link:'/exhibition-in-india',
@@ -270,16 +270,16 @@ const Header = () => {
                           {subLink.links ? (
                             <Menu width={200} shadow="md" position="right-start" trigger="hover" closeOnItemClick={false}>
                               <Menu.Target>
-                                <Menu.Item  rightSection={<ChevronRight size={14} />}> 
+                                <Menu.Item  rightSection={<ChevronRight size={14} onClick={(e) => e.preventDefault()} />}> 
                                   {subLink.label}
                                 </Menu.Item>
                               </Menu.Target>
                               <Menu.Dropdown className={classes.nestedSubmenuDropdown}>
-                                {subLink.links.map((nestedLink) => (
-                                  <Menu.Item key={nestedLink.label} component="a" href={'/'} className={classes.nestedSubmenuLink}>
+                                {subLink.links.map((nestedLink ,index) => (
+                                  <Menu.Item key={nestedLink+index}  component="a" href={nestedLink.link} className={classes.nestedSubmenuLink}>
                                     {nestedLink.label}
                                   </Menu.Item>
-                                ))}
+                                ))} 
                               </Menu.Dropdown>
                             </Menu>
                           ) : (

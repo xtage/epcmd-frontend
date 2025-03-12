@@ -15,6 +15,7 @@ import classes from "./component/pages/About/styles/About.module.css";
 import { getPageTitle } from "./lib/method/getPageTitle";
 import { Events } from "./component/pages/Events/EventsRoutes";
 import NameHeader from "./component/Layout/Header/NameHeader";
+import { MemberRoutes } from "./component/pages/Member/MemberRoutes";
 
 const App = () => {
   const location = useLocation();
@@ -36,6 +37,7 @@ const App = () => {
     },
     ...AboutRoutes,
     ...Events,
+    ...MemberRoutes
   ]);
   return (
     <QueryClientProvider client={queryClient}>
@@ -53,11 +55,11 @@ const App = () => {
           </Box>
         )}
         <Flex style={{ flex: 1 }}>
-          {pageLinks.length > 0 && (
+          {/* {pageLinks.length > 0 && (
             <Box style={{ flexShrink: 0 }} px={"2rem"}>
               <PageSideBar menuLinks={pageLinks} />
             </Box>
-          )}
+          )} */}
           <Box style={{ flex: 1, overflowY: "hidden" }}>{routes}</Box>
         </Flex>
         <Footer />

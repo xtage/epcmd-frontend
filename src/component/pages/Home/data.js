@@ -147,48 +147,48 @@ export const MemberCardData = [
     frontText: "Market Access Through Buyer Seller Meet",
     backText:
       "Gain access to global markets by participating in exclusive buyer-seller meets, connecting with international buyers, and showcasing your products.",
-    color: "#407BFF",
+    color: "#344CB7",
   },
   {
     image: Icon2,
     frontText: "Participation in International Exhibitions",
     backText:
       "Showcase your products at renowned international trade fairs and exhibitions to expand your global reach and network with industry leaders.",
-    color: "#209116",
+    color: "#344CB7",
   },
   {
     image: Icon3,
     frontText: "Policy Advocacy",
     backText:
       "Benefit from our advocacy efforts to influence policies that support and promote the growth of your export business.",
-    color: "#FF725E",
+    color: "#344CB7",
   },
   {
     image: Icon4,
     frontText: "Capacity Building",
     backText:
       "Enhance your skills and knowledge through workshops, training programs, and resources designed to improve your export capabilities.",
-    color: "#82F409",
+    color: "#344CB7",
   },
   {
     image: Icon5,
     frontText: "Export Promotion Incentive Under MAI",
     backText:
       "Avail financial assistance and incentives under the Market Access Initiative (MAI) to reduce the cost of export promotion activities.",
-    color: "#E009F4",
+    color: "#344CB7",
   },
   {
     image: Icon6,
     frontText: "Export Data and Information",
     backText:
       "Access comprehensive export data, market insights, and trade information to make informed business decisions.",
-    color: "#6B09F4",
+    color: "#344CB7",
   },
   {
     image: Icon7,
     frontText: "Organizer Reverse Buyer Seller Meet",
     backText:
       "Participate in reverse buyer-seller meets where international buyers are invited to explore your products and services.",
-    color: "#F49409",
+    color: "#344CB7",
   },
 ];

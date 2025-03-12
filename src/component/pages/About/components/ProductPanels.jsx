@@ -1,4 +1,4 @@
-import { Paper, Text } from "@mantine/core";
+import { Paper, Text ,Box} from "@mantine/core";
 
 import PageLoader from "../../../common/component/Loader/Loader";
 import { useAboutPage } from "../../../../lib/queries/About/useBriefProfile";
@@ -16,12 +16,20 @@ const ProductPanels = () => {
   ];
 
   return (
-    <Paper p={"md"} className="relativePositioning">
+    <Paper className="relativePositioning" p={"lg"}>
+      <Box>
+        <Text>
+          The Committee Administration oversees the governance and strategic
+          decision-making processes within the organization. It ensures smooth
+          operations, policy implementation, and compliance with organizational
+          goals and regulations.
+        </Text>
+      </Box>
       <PageLoader isLoading={isLoading} />
       <TableWithPagination
         data={ProductPanelData}
         columns={COLUMN_NAME}
-        title={"Product Panel"}
+        title={"Product Panels"}
         rowsPerPage={10}
       />
     </Paper>

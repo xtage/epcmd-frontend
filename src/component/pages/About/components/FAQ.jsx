@@ -1,4 +1,4 @@
-import { Accordion, Container, Title, Loader, Text } from "@mantine/core";
+import { Accordion, Container, Title, Loader, Text ,Box} from "@mantine/core";
 import { useAboutPage } from "../../../../lib/queries/About/useBriefProfile";
 
 import classes from "../styles/Faq.module.css";
@@ -9,7 +9,7 @@ const FAQ = () => {
   const FaqData = data?.faq_items ?? [];
 
   return (
-    <Container size="sm" className={classes.wrapper}>
+    <Box size="sm" className={classes.wrapper}>
       <Title ta="center" className={classes.title}>
         Frequently Asked Questions
       </Title>
@@ -32,7 +32,7 @@ const FAQ = () => {
           No FAQs available
         </Text>
       )}
-    </Container>
+    </Box>
   );
 };
 

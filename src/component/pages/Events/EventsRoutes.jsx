@@ -1,17 +1,27 @@
-import ForthcomingEvents from './component/ForthcomingEvents';
-import PastEvents from './component/PastEvents';
-import WebinarsSeminars from './component/WebinarsSeminars';
+import UpcomingEvents from './component/UpcomingEvents';
+import EventCalender from './component/EventCalender';
+import Webinar from './component/Webinar';
+import TechnicalConference from './component/TechnicalConference';
+import TradeShow from './component/TradeShow';
 export const Events=[
     {
-        path:'/forthcoming-events',
-        element:<ForthcomingEvents/>,    
+        path:'/webinar',
+        element:<Webinar/>
     },
     {
-        path:'/past-events',
-        element:<PastEvents/>,
+        path:'/technical-conference',
+        element:<TechnicalConference/>
     },
     {
-        path:'/webinars-seminars',
-        element:<WebinarsSeminars/>,
+        path:'/trade-show',
+        element:<TradeShow/>
+    },
+    {
+        path:'/event-calender',
+        element:<EventCalender/>
+    },
+    {
+        path:'/upcoming-events',
+        element:<UpcomingEvents/>
     },
 ]

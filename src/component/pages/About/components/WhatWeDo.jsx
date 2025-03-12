@@ -1,8 +1,7 @@
 import { Box, Flex, Paper, Skeleton, Text, Title } from "@mantine/core";
-
-const ChairmanPen = () => {
+const WhatWeDo = () => {
   const PRIMARY_COL_HEIGHT = "400px";
-  // const { data, isLoading } = useAboutPage();
+
   return (
     <Paper className="relativePositioning" p={"lg"}>
       <Flex w={"100%"} gap={"md"}>
@@ -15,7 +14,7 @@ const ChairmanPen = () => {
           />
         </Box>
         <Box w={"50%"}>
-          <Title order={3}>CHAIRMAN’S PEN</Title>
+          <Title order={3}>WHAT WE DO?</Title>
           <Text>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
             incidunt natus harum ab modi ut, consequatur nam dolorum magnam
@@ -47,4 +46,4 @@ const ChairmanPen = () => {
   );
 };
 
-export default ChairmanPen;
+export default WhatWeDo;
