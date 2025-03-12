@@ -50,7 +50,6 @@ function Gallery() {
                   filter: isCenter ? "none" : "grayscale(100%)",
                   transform: `scale(${isCenter ? scaleFactor : 1})`,
                   transition: "all 0.3s ease-in-out",
-                  objectFit: "cover",
                   borderRadius: "1.8rem",
                   display: "block",
                   height: "100%",
